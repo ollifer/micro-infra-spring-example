@@ -1,0 +1,10 @@
+{
+  "rest": {
+    "this": "greeting",
+    "dependencies": {
+      "greeting": {
+        "path": "greeting"
+      }
+    }
+  }
+}
