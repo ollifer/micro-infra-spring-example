@@ -11,14 +11,12 @@ import org.springframework.context.annotation.PropertySource;
 @SpringBootApplication
 @EnableServiceDiscovery
 @EnableServiceRestClient
-@PropertySource("classpath:prop.properties")
 public class ApplicationServer {
 
     public static void main(String[] args) {
 
         ApplicationContext ctx =  SpringApplication.run(ApplicationServer.class, args);
         ServiceRestClient serviceRestClient = (ServiceRestClient) ctx.getBean("serviceRestClient");
-
         String response =  serviceRestClient.forService("greeting")
                 .get()
                 .onUrl("greeting")
