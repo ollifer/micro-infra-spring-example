@@ -6,7 +6,6 @@ import com.ofg.infrastructure.web.resttemplate.fluent.ServiceRestClient;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication
 @EnableServiceDiscovery
@@ -19,7 +18,7 @@ public class ApplicationServer {
         ServiceRestClient serviceRestClient = (ServiceRestClient) ctx.getBean("serviceRestClient");
         String response =  serviceRestClient.forService("greeting")
                 .get()
-                .onUrl("greeting")
+                .onUrl("rest/greeting")
                 .anObject()
                 .ofType(String.class);
 
